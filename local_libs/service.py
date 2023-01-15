@@ -18,11 +18,6 @@ class WinService(win32serviceutil.ServiceFramework):
         self.hWaitStop = win32event.CreateEvent(None, 0, 0, None)
         socket.setdefaulttimeout(60)
 
-    def SvcStop(self):
-        self.stop()
-        self.ReportServiceStatus(win32service.SERVICE_STOP_PENDING)
-        win32event.SetEvent(self.hWaitStop)
-
     def SvcDoRun(self):
         self.ReportServiceStatus(win32service.SERVICE_RUNNING)
         self.start()
@@ -30,6 +25,11 @@ class WinService(win32serviceutil.ServiceFramework):
                               servicemanager.PYS_SERVICE_STARTED,
                               (self._svc_name_, ''))
         self.main()
+
+    def SvcStop(self):
+        self.stop()
+        self.ReportServiceStatus(win32service.SERVICE_STOP_PENDING)
+        win32event.SetEvent(self.hWaitStop)
 
     def start(self):
         pass
