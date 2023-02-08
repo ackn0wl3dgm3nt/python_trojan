@@ -1,2 +1,2 @@
 # Python RAT (remote access tool)
-Developing process
+Developing process, see developing branch
