@@ -1,2 +1,2 @@
-# Python RAT (remote access tool)
+# Python Trojan (Backdoor, keylogger, passwords stealer)
 Developing process, see developing branch
