@@ -1,2 +1,2 @@
-# Python Trojan (Backdoor, keylogger, passwords stealer)
+# Python Trojan (backdoor, keylogger, passwords stealer)
 Developing process, see developing branch
